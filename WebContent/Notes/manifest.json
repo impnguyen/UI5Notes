@@ -25,7 +25,7 @@
     },
     "sap.ui5": {
         "_version": "1.1.0",
-        "rootView": "UI5Notes.Notes/Main",
+        "rootView": "UI5Notes.Notes.views/main",
         "dependencies": {
             "minUI5Version": "1.42",
             "libs": {

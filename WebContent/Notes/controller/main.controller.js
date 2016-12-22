@@ -3,9 +3,11 @@ sap.ui.define([
    "sap/m/MessageToast"
 ], function (Controller, MessageToast) {
    "use strict";
-   return Controller.extend("UI5Notes.controller.main", {
-      onShowHello : function () {
-         MessageToast.show("Hello World");
+
+   return Controller.extend("UI5Notes.Notes.controller.main", {
+      onInit: function(){
+        MessageToast.show("Hello World");
       }
+    
    });
 });

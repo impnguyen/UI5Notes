@@ -1,6 +1,6 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
-		controllerName="UI5Notes.views.main" xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Title">
+		controllerName="UI5Notes.Notes.controller.main" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="My UI5 notebook">
 		<content>
 			
 		</content>
