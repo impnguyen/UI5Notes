@@ -1,0 +1,38 @@
+{
+    "_version": "1.1.0",
+    "sap.app": {
+        "_version": "1.1.0",
+        "id": "UI5Notes",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "UI5Notes",
+        "description": "An example implementation of a notebook with Openui5 and signature_pad by szimek",
+        "applicationVersion": {
+            "version": "0.0.1"
+        }
+    },
+    "sap.ui": {
+        "_version": "1.1.0",
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_belize"
+        ]
+    },
+    "sap.ui5": {
+        "_version": "1.1.0",
+        "rootView": "UI5Notes.Notes/Main",
+        "dependencies": {
+            "minUI5Version": "1.42",
+            "libs": {
+                "sap.m": {
+
+                }
+            }
+        }
+    }
+}
