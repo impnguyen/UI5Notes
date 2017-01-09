@@ -1,0 +1,31 @@
+{
+  "name": "ui5notes",
+  "version": "1.0.0",
+  "description": "An example implementation of a notebook with Openui5 and signature_pad by szimek",
+  "main": "WebContent/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/impnguyen/UI5Notes.git"
+  },
+  "keywords": [
+    "sapui5",
+    "openui5",
+    "ui5",
+    "sketch",
+    "pad",
+    "sketchpad",
+    "draw",
+    "signature",
+    "pad",
+    "szimek"
+  ],
+  "author": "Manh Phuoc Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/impnguyen/UI5Notes/issues"
+  },
+  "homepage": "https://github.com/impnguyen/UI5Notes#readme"
+}
