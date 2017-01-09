@@ -1,0 +1,29 @@
+{
+  "name": "ui5notes",
+  "description": "An example implementation of a notebook with Openui5 and signature_pad by szimek",
+  "main": "WebContent/index.html",
+  "authors": [
+    "Manh Phuoc Nguyen"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "sapui5",
+    "openui5",
+    "ui5",
+    "sketch",
+    "pad",
+    "sketchpad",
+    "draw",
+    "signature",
+    "pad",
+    "szimek"
+  ],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "openui5-sap.ui.core": "openui5/packaged-sap.ui.core#^1.44.3",
+    "openui5-sap.m": "openui5/packaged-sap.m#^1.44.3",
+    "openui5-themelib_sap_belize": "openui5/packaged-themelib_sap_belize#^1.44.3"
+  },
+  "devDependencies": {}
+}

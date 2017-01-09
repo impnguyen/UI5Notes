@@ -27,5 +27,11 @@
   "bugs": {
     "url": "https://github.com/impnguyen/UI5Notes/issues"
   },
-  "homepage": "https://github.com/impnguyen/UI5Notes#readme"
+  "homepage": "https://github.com/impnguyen/UI5Notes#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-openui5": "^0.11.0"
+  },
+  "dependencies": {}
 }
