@@ -1,5 +1,5 @@
-/*jQuery.sap.registerModulePath('signature_pad', 'resources/signature_pad');
-jQuery.sap.require("signature_pad");*/
+jQuery.sap.registerModulePath('signature_pad', 'resources/signature_pad');
+jQuery.sap.require("signature_pad");
 
 sap.ui.define([
    "sap/ui/core/mvc/Controller",
@@ -15,6 +15,7 @@ sap.ui.define([
       onAfterRendering: function(){
         debugger; 
         //new SignaturePad(canvas);
+        //hier muss nur noch ein canvas erzeugt werden
       }
     
    });
