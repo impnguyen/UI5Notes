@@ -1,8 +1,146 @@
-<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+<core:View xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified"
 		controllerName="UI5Notes.Notes.controller.main" xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="My UI5 notebook">
-		<content>
-			
-		</content>
+
+	<Page xmlns="sap.m"
+		busy="false"
+		busyIndicatorDelay="0"
+		visible="true"
+		fieldGroupIds=""
+		title="Notes"
+		titleLevel="Auto"
+		showNavButton="false"
+		showHeader="true"
+		showSubHeader="true"
+		navButtonText=""
+		navButtonTooltip=""
+		enableScrolling="false"
+		icon=""
+		backgroundDesign="Standard"
+		navButtonType="Back"
+		showFooter="true"
+		contentOnlyBusy="false"
+		floatingFooter="false"
+		validateFieldGroup=""
+		navButtonTap=""
+		navButtonPress="">
+			<dependents></dependents> <!-- sap.ui.core.Control, since 1.19 -->
+			<content>
+				<IconTabBar 
+					id="idIconTabBarNoIcons" 
+					class="sapUiResponsiveContentPadding"
+					busy="false"
+					busyIndicatorDelay="0"
+					visible="true"
+					showSelection="true"
+					expandable="true"
+					expanded="true"
+					selectedKey=""
+					upperCase="false"
+					stretchContentHeight="true"
+					applyContentPadding="true"
+					backgroundDesign="Solid"
+					headerMode="Standard"
+					select=""
+					expand="">
+					<items>
+						<IconTabFilter
+							text="Note 1"
+							enabled="true"
+							textDirection="Inherit"
+							key=""
+							count=""
+							showAll="true"
+							icon=""
+							iconColor="Default"
+							visible="true"
+							design="Vertical">
+								<content>
+									<core:HTML 
+										id="html"
+										content='&lt;canvas id="signature-pad" class="signature-pad" width="900px" height="650px" &gt;&lt;/canvas&gt;'
+										busy="false"
+										busyIndicatorDelay="0"
+										visible="true"
+										preferDOM="true"
+										sanitizeContent="false"
+										afterRendering="">
+									</core:HTML>
+								</content>
+						</IconTabFilter>
+					</items>
+				</IconTabBar>
+
+				<!--utilities 
+				<MenuButton xmlns="sap.m"
+					id="menuButton"
+					busy="false"
+					busyIndicatorDelay="0"
+					visible="true"
+					text="pref"
+					type="Default"
+					width="auto"
+					enabled="true"
+					icon="sap-icon://edit"
+					textDirection="Inherit"
+					buttonMode="Split"
+					useDefaultActionOnly="false"
+					defaultAction="">
+						<menu>
+							<Menu
+								busy="false"
+								busyIndicatorDelay="0"
+								visible="true"
+								title=""
+								itemSelected=""
+								closed="">
+									<items> 
+										<MenuItem
+											text="color"
+											enabled="true"
+											key="color"
+											icon="sap-icon://palette"
+											visible="true"
+											startsSection="false"
+											press=""
+											propertyChanged=""
+											aggregationChanged="">
+												<items>
+													<MenuItem xmlns="sap.m"
+														text="red"
+														enabled="true"
+														key="red"
+														icon=""
+														visible="true"
+														startsSection="false"
+														press=""
+														propertyChanged=""
+														aggregationChanged="">
+													</MenuItem>
+												/items>
+										</MenuItem>
+									</items>
+							</Menu>
+						</menu>
+				</MenuButton>-->
+				
+			</content> <!-- sap.ui.core.Control -->
+			<customHeader></customHeader> <!-- sap.m.IBar -->
+			<footer></footer> <!-- sap.m.IBar -->
+			<subHeader>
+				<Toolbar>
+					<Button text="red" id="red" press="onPressColor"></Button>
+					<Button text="blue" id="blue" press="onPressColor"></Button>
+					<Button text="green" id="green" press="onPressColor"></Button>
+					<Button text="black" id="black" press="onPressColor"></Button>
+					<Button text="yellow" id="yellow" press="onPressColor"></Button>
+					<Button text="black" id="blackred" press="onPressColor"></Button>
+					<Button text="custom" id="custom" press="onPressColor"></Button>
+					<Button icon="sap-icon://delete" id="delete" press="onDelete"></Button>
+					<Button icon="sap-icon://background" id="export" press="onExport"></Button>
+				</Toolbar>
+			</subHeader> <!-- sap.m.IBar -->
+			<headerContent></headerContent> <!-- sap.ui.core.Control -->
+			<landmarkInfo></landmarkInfo> <!-- sap.m.PageAccessibleLandmarkInfo -->
 	</Page>
+
 </core:View>

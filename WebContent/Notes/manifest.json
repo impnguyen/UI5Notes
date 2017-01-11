@@ -31,8 +31,20 @@
             "libs": {
                 "sap.m": {
 
+                }, 
+                "sap.ui.layout": {
+                    
+                }, 
+                "sap.ui.unified": {
+                    
                 }
             }
+        }, 
+        "resources":{
+            "css": [{
+                "uri": "styles/style.css",
+                "id": "noteStyle"
+            }]
         }
     }
 }

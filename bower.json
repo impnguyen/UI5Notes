@@ -24,7 +24,9 @@
     "openui5-sap.ui.core": "openui5/packaged-sap.ui.core#^1.44.3",
     "openui5-sap.m": "openui5/packaged-sap.m#^1.44.3",
     "openui5-themelib_sap_belize": "openui5/packaged-themelib_sap_belize#^1.44.3",
-    "signature_pad": "^1.5.3"
+    "signature_pad": "^1.5.3",
+    "openui5-sap.ui.layout": "openui5/packaged-sap.ui.layout#^1.44.3",
+    "openui5-sap.ui.unified": "openui5/packaged-sap.ui.unified#^1.44.3"
   },
   "devDependencies": {}
 }
