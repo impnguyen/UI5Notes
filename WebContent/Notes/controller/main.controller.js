@@ -12,7 +12,7 @@ sap.ui.define([
 
 
     onInit: function () {
-      MessageToast.show("Hello World");
+      this.initGlobalFunctions();
     },
 
     onAfterRendering: function () {
@@ -90,15 +90,52 @@ sap.ui.define([
      */
     onDelete: function (oEvent) {
       this.signaturePad.clear();
+      this.getView().byId("fileUploader").clear();
     },
 
     /**
      * onExport: export image as png
      */
-    onExport: function (oEvent) {
+    onExportImage: function (oEvent) {
       // Returns signature image as data URL (see https://mdn.io/todataurl for the list of possible paramters)
-      this.signaturePad.toDataURL(); // save image as PNG
-      this.signaturePad.toDataURL("image/png"); // save image as JPEG
+      var data = this.signaturePad.toDataURL("image/png"); // save image as JPEG
+      window.open(data);
+    },
+
+    /**
+     * onUploadImageComplete: import image completed
+     */
+    onUploadImageComplete: function (oEvent) {
+      var oFile = oEvent.oSource.oFileUpload.files[0];
+      var sPath = URL.createObjectURL(oFile);
+      this.signaturePad.fromDataURL(sPath, 900, 650);
+    },
+
+    /**
+     * initGlobalFunctions: init global functions
+     */
+    initGlobalFunctions: function (oEvent) {
+      //color picker
+      jQuery('#defaultColorPickerInput').on('input', function () {
+        alert("geht");
+      });
+
+      //prototype from dataurl
+      SignaturePad.prototype.fromDataURL = function (sDataUrl, iWidth, iHeight) {
+        var self = this,
+            image = new Image(),
+            ratio = window.devicePixelRatio || 1,
+            width = iWidth,
+            height = iHeight;
+
+        this._reset();
+        image.src = sDataUrl;
+        image.onload = function () {
+            self._ctx.drawImage(image, 0, 0, width, height);
+        };
+        this._isEmpty = false;
+    };
+
     }
 
   });

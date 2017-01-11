@@ -5,3 +5,57 @@
   width:500px;
   height:500px;
 }*/
+
+/*span#__xmlview0--custom-content {
+    color: black !important;
+}*/
+
+.wrapper {
+  position: relative;
+  width: 900px;
+  height: 650px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height:650px;
+}
+
+.signature-pad {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width:900px;
+  height:650px;
+}
+
+
+span#__xmlview0--red-inner {
+    background-color: red !important;
+}
+
+span#__xmlview0--blue-inner {
+    background-color: blue !important;
+}
+
+span#__xmlview0--black-inner {
+    background-color: black !important;
+}
+
+span#__xmlview0--yellow-inner {
+    background-color: yellow !important;
+}
+
+span#__xmlview0--green-inner {
+    background-color: green !important;
+}
+
+span#__xmlview0--black-inner {
+    background-color: black !important;
+}
