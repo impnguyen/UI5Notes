@@ -2,6 +2,7 @@
 		controllerName="UI5Notes.Notes.controller.main" xmlns:html="http://www.w3.org/1999/xhtml">
 
 	<Page xmlns="sap.m"
+		class="pageBackground"
 		busy="false"
 		busyIndicatorDelay="0"
 		visible="true"
@@ -26,50 +27,16 @@
 			<dependents>
 			</dependents> 
 			<content>
-				<IconTabBar 
-					id="idIconTabBarNoIcons" 
-					class="sapUiResponsiveContentPadding"
+				<core:HTML 
+					id="html"
+					content='&lt;div class="wrapper"&gt;&lt;canvas id="signature-pad" class="signature-pad" width="1024px" height="650px"&gt;&lt;/canvas&gt;&lt;/div&gt;'
 					busy="false"
 					busyIndicatorDelay="0"
 					visible="true"
-					showSelection="true"
-					expandable="true"
-					expanded="true"
-					selectedKey=""
-					upperCase="false"
-					stretchContentHeight="true"
-					applyContentPadding="true"
-					backgroundDesign="Solid"
-					headerMode="Standard"
-					select=""
-					expand="">
-					<items>
-						<IconTabFilter
-							text="Note 1"
-							enabled="true"
-							textDirection="Inherit"
-							key=""
-							count=""
-							showAll="true"
-							icon=""
-							iconColor="Default"
-							visible="true"
-							design="Vertical">
-								<content>
-									<core:HTML 
-										id="html"
-										content='&lt;div class="wrapper"&gt;&lt;img id="canvasImage"  width="900px" height="650px"/&gt;&lt;canvas id="signature-pad" class="signature-pad" width="900px" height="650px"&gt;&lt;/canvas&gt;&lt;/div&gt;'
-										busy="false"
-										busyIndicatorDelay="0"
-										visible="true"
-										preferDOM="true"
-										sanitizeContent="false"
-										afterRendering="">
-									</core:HTML>
-								</content>
-						</IconTabFilter>
-					</items>
-				</IconTabBar>
+					preferDOM="true"
+					sanitizeContent="false"
+					afterRendering="">
+				</core:HTML>
 			</content> <!-- sap.ui.core.Control -->
 			<customHeader></customHeader> <!-- sap.m.IBar -->
 			<footer></footer> <!-- sap.m.IBar -->
@@ -91,6 +58,11 @@
 						sanitizeContent="false"
 						afterRendering="">
 					</core:HTML>
+					<ToolbarSeparator></ToolbarSeparator>
+					<Button icon="https://d30y9cdsu7xlg0.cloudfront.net/png/3715-200.png" id="del" press="onPressColor"></Button>
+					<Button icon="sap-icon://add" press="onIncreaseDotSize"></Button>
+					<Button icon="sap-icon://less" press="onDecreaseDotSize"></Button>
+					<ToolbarSeparator></ToolbarSeparator>
 					<FileUploader xmlns="sap.ui.unified"
 						id="fileUploader"
 						visible="true"

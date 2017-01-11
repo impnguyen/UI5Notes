@@ -25,11 +25,26 @@ sap.ui.define([
     activate: function () {
       var canvas = document.querySelector("#signature-pad");
 
+      // change non-opaque pixels to white
+      // var imgData = canvas.getContext("2d").getImageData(0, 0, canvas.width, canvas.height);
+      // var data = imgData.data;
+      // for (var i = 0; i < data.length; i += 4) {
+      //   if (data[i + 3] < 255) {
+      //     data[i] = 255;
+      //     data[i + 1] = 255;
+      //     data[i + 2] = 255;
+      //     data[i + 3] = 255;
+      //   }
+      // }
+      // canvas.getContext("2d").putImageData(imgData, 0, 0);
+
       try {
         this.signaturePad = new SignaturePad(canvas);
+        this.signaturePad.dotSize = 1;
         this.signaturePad.minWidth = 1;
-        this.signaturePad.maxWidth = 5;
+        this.signaturePad.maxWidth = 3;
         this.signaturePad.penColor = "rgb(0, 0, 0)";
+        this.signaturePad.backgroundColor = "rgba(255, 255, 255)";
 
         //this.resizeCanvas();
       } catch (e) {
@@ -37,17 +52,6 @@ sap.ui.define([
       }
     },
 
-    //resize canvas
-    resizeCanvas: function resizeCanvas() {
-      var canvas = document.querySelector("#signature-pad");
-
-      if (canvas) {
-        var ratio = Math.max(window.devicePixelRatio || 1, 1);
-        canvas.width = canvas.offsetWidth * ratio;
-        canvas.height = canvas.offsetHeight * ratio;
-        canvas.getContext("2d").scale(ratio, ratio);
-      }
-    },
 
 
 
@@ -78,6 +82,9 @@ sap.ui.define([
         case oEvent.oSource.oParent.oParent.oParent.sId + "--custom":
           //this.signaturePad.penColor = "rgb(255, 0, 0)";
           break;
+        case oEvent.oSource.oParent.oParent.oParent.sId + "--del":
+          this.signaturePad.penColor = "rgb(255, 255, 255)";
+          break;
         default:
           this.signaturePad.penColor = "rgb(0, 0, 0)";
           break;
@@ -94,11 +101,37 @@ sap.ui.define([
     },
 
     /**
+     * onDecreaseDotSize: decrease dot size
+     */
+    onDecreaseDotSize: function (oEvent) {
+      if (this.signaturePad.dotSize === 1) {
+        MessageToast.show("reached limit");
+      } else {
+        this.signaturePad.dotSize = this.signaturePad.dotSize - 1;
+        this.signaturePad.maxWidth = this.signaturePad.maxWidth - 1;
+        this.signaturePad.minWidth = this.signaturePad.minWidth - 1;
+      }
+    },
+
+    /**
+     * onIncreaseDotSize: increase dot size
+     */
+    onIncreaseDotSize: function (oEvent) {
+      if (this.signaturePad.dotSize === 10) {
+        MessageToast.show("reached limit");
+      } else {
+        this.signaturePad.dotSize = this.signaturePad.dotSize + 1;
+        this.signaturePad.maxWidth = this.signaturePad.maxWidth + 1;
+        this.signaturePad.minWidth = this.signaturePad.minWidth + 1;
+      }
+    },
+
+    /**
      * onExport: export image as png
      */
     onExportImage: function (oEvent) {
-      // Returns signature image as data URL (see https://mdn.io/todataurl for the list of possible paramters)
-      var data = this.signaturePad.toDataURL("image/png"); // save image as JPEG
+      //export to url
+      var data = this.signaturePad.toDataURL("image/png", 1.0);
       window.open(data);
     },
 
@@ -108,8 +141,14 @@ sap.ui.define([
     onUploadImageComplete: function (oEvent) {
       var oFile = oEvent.oSource.oFileUpload.files[0];
       var sPath = URL.createObjectURL(oFile);
-      this.signaturePad.fromDataURL(sPath, 900, 650);
+      this.signaturePad.fromDataURL(sPath, 1024, 650);
     },
+
+
+
+
+
+
 
     /**
      * initGlobalFunctions: init global functions
@@ -123,18 +162,18 @@ sap.ui.define([
       //prototype from dataurl
       SignaturePad.prototype.fromDataURL = function (sDataUrl, iWidth, iHeight) {
         var self = this,
-            image = new Image(),
-            ratio = window.devicePixelRatio || 1,
-            width = iWidth,
-            height = iHeight;
+          image = new Image(),
+          ratio = window.devicePixelRatio || 1,
+          width = iWidth,
+          height = iHeight;
 
         this._reset();
         image.src = sDataUrl;
         image.onload = function () {
-            self._ctx.drawImage(image, 0, 0, width, height);
+          self._ctx.drawImage(image, 0, 0, width, height);
         };
         this._isEmpty = false;
-    };
+      };
 
     }
 

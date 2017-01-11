@@ -1,18 +1,10 @@
-/*.signature-pad {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width:500px;
-  height:500px;
-}*/
-
-/*span#__xmlview0--custom-content {
-    color: black !important;
-}*/
+canvas#signature-pad {
+    background-color: white;
+}
 
 .wrapper {
   position: relative;
-  width: 900px;
+  width: 1024px;
   height: 650px;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -31,7 +23,7 @@ img {
   position: absolute;
   left: 0;
   top: 0;
-  width:900px;
+  width:1024px;
   height:650px;
 }
 
