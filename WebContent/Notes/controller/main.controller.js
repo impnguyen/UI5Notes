@@ -155,9 +155,13 @@ sap.ui.define([
      */
     initGlobalFunctions: function (oEvent) {
       //color picker
-      jQuery('#defaultColorPickerInput').on('input', function () {
-        alert("geht");
+      $(document).ready(function () {
+        $('#defaultColorPickerInput').on('input', function () {
+          alert("geht");
+        });
       });
+
+
 
       //prototype from dataurl
       SignaturePad.prototype.fromDataURL = function (sDataUrl, iWidth, iHeight) {
