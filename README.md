@@ -1,5 +1,5 @@
 # UI5Notes
-A prototype example implementation of a notebook with Openui5 and signature_pad by szimek. 
+A prototype example implementation of a notebook with Openui5 and [signature_pad!](https://github.com/szimek/signature_pad) by [szimek!](https://github.com/szimek). 
 
 
 ## Features
