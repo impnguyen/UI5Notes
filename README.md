@@ -9,4 +9,4 @@ A prototype example implementation of a notebook with Openui5 and signature_pad 
 
 ## Screenshots
 ![alt text](https://github.com/impnguyen/UI5Notes/blob/master/readme/screenshot1.png "screenshot1")
-![alt text](https://github.com/impnguyen/UI5Notes/blob/master/readme/screenshot2.png "screenshot2")
+![alt text](https://github.com/impnguyen/UI5Notes/blob/master/readme/screenshot1_1.png "screenshot1_1")
