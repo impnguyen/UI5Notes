@@ -25,26 +25,14 @@ sap.ui.define([
     activate: function () {
       var canvas = document.querySelector("#signature-pad");
 
-      // change non-opaque pixels to white
-      // var imgData = canvas.getContext("2d").getImageData(0, 0, canvas.width, canvas.height);
-      // var data = imgData.data;
-      // for (var i = 0; i < data.length; i += 4) {
-      //   if (data[i + 3] < 255) {
-      //     data[i] = 255;
-      //     data[i + 1] = 255;
-      //     data[i + 2] = 255;
-      //     data[i + 3] = 255;
-      //   }
-      // }
-      // canvas.getContext("2d").putImageData(imgData, 0, 0);
-
       try {
-        this.signaturePad = new SignaturePad(canvas);
-        this.signaturePad.dotSize = 1;
-        this.signaturePad.minWidth = 1;
-        this.signaturePad.maxWidth = 3;
-        this.signaturePad.penColor = "rgb(0, 0, 0)";
-        this.signaturePad.backgroundColor = "rgba(255, 255, 255)";
+        this.signaturePad = new SignaturePad(canvas, {
+          backgroundColor: 'rgba(255, 255, 255, 1)',
+          penColor: 'rgb(0, 0, 0)', 
+          dotSize: 1,
+          minWidth: 1, 
+          maxWidth: 3
+        });
 
         //this.resizeCanvas();
       } catch (e) {
